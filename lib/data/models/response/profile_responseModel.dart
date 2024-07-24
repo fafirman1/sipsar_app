@@ -57,7 +57,8 @@ class Profile {
 
     String toJson() => json.encode(toMap());
 
-    factory Profile.fromMap(Map<String, dynamic> json) => Profile(
+    factory Profile.fromMap(Map<String, dynamic> json) => 
+    Profile(
         id: json["id"],
         title: json["title"],
         image: json["image"],

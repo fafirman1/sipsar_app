@@ -1,4 +1,10 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sipsar/data/datasource/guru_remote_datasource.dart';
+import 'package:sipsar/data/datasource/profile_remote_datasource.dart';
+import 'package:sipsar/presentation/bloc/guru/guru_bloc.dart';
+import 'package:sipsar/presentation/bloc/profile/profile_bloc.dart';
 
 import 'presentation/event.dart';
 import 'presentation/guru.dart';
@@ -14,9 +20,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyHomePage(),
-      debugShowCheckedModeBanner: false,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => ProfileBloc(ProfileRemoteDatasource())
+          ..add(const ProfileEvent.fetch()),
+        ),
+        BlocProvider(
+          create: (context) => GuruBloc(GuruRemoteDatasource())
+          ..add(const GuruEvent.fetch())
+          ),
+      ],
+      child: const MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          home: MyHomePage()   
+      ),
     );
   }
 }
@@ -105,3 +124,5 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+

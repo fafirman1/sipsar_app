@@ -9,7 +9,7 @@
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter/services.dart';
-import 'package:svg_flutter/svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 
 class $AssetsImagesGen {

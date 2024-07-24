@@ -17,7 +17,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) : super(const _Initial()) {
     on<_Fetch>((event, emit) async{
       emit(const ProfileState.loading());
-      final response = await _profileRemoteDatasource.getProducts();
+      final response = await _profileRemoteDatasource.getProfile();
       response.fold(
         (l) => emit(ProfileState.error(l)), 
         (r) => emit(ProfileState.success(r.data))
