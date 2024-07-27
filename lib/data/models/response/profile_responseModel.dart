@@ -35,7 +35,7 @@ class Profile {
     final dynamic logo;
     final String sejarah;
     final String visi;
-    final String misi;
+    final List<String> misi;
     final String lokasi;
     final DateTime createdAt;
     final DateTime updatedAt;
@@ -65,7 +65,7 @@ class Profile {
         logo: json["logo"],
         sejarah: json["sejarah"],
         visi: json["visi"],
-        misi: json["misi"],
+        misi: List<String>.from(jsonDecode(json['misi']) as List),
         lokasi: json["lokasi"],
         createdAt: DateTime.parse(json["created_at"]),
         updatedAt: DateTime.parse(json["updated_at"]),
@@ -78,7 +78,7 @@ class Profile {
         "logo": logo,
         "sejarah": sejarah,
         "visi": visi,
-        "misi": misi,
+        "misi": jsonEncode(misi),
         "lokasi": lokasi,
         "created_at": createdAt.toIso8601String(),
         "updated_at": updatedAt.toIso8601String(),

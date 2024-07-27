@@ -17,7 +17,7 @@ class GuruBloc extends Bloc<GuruEvent, GuruState> {
       final response = await _guruRemoteDatasource.getGuru();
       response.fold(
         (l) => emit(GuruState.error(l)), 
-        (r) => emit(GuruState.success(r.data as Guru))
+        (r) => emit(GuruState.success(r.data))
       );
     });
   }

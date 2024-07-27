@@ -6,12 +6,21 @@ import 'package:sipsar/data/datasource/profile_remote_datasource.dart';
 import 'package:sipsar/presentation/bloc/guru/guru_bloc.dart';
 import 'package:sipsar/presentation/bloc/profile/profile_bloc.dart';
 
+import 'data/datasource/event_remote_datasource.dart';
+import 'data/datasource/pengumuman_remote_datasource.dart';
+import 'presentation/bloc/acara/acara_bloc.dart';
+import 'presentation/bloc/pengumuman/pengumuman_bloc.dart';
 import 'presentation/event.dart';
 import 'presentation/guru.dart';
 import 'presentation/pengumuman.dart';
 import 'presentation/profile.dart';
+import 'package:flutter_downloader/flutter_downloader.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await FlutterDownloader.initialize(
+      debug: true // opsional: aktifkan debug
+  );
   runApp(const MyApp());
 }
 
@@ -29,6 +38,14 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => GuruBloc(GuruRemoteDatasource())
           ..add(const GuruEvent.fetch())
+          ),
+        BlocProvider(
+          create: (context) => PengumumanBloc(PengumumanRemoteDatasource())
+          ..add(const PengumumanEvent.fetch())
+          ),
+        BlocProvider(
+          create: (context) => AcaraBloc(EventRemoteDatasource())
+          ..add(const AcaraEvent.fetch())
           ),
       ],
       child: const MaterialApp(

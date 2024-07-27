@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'guru_bloc.dart';
+part of 'acara_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$GuruEvent {
+mixin _$AcaraEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
@@ -57,15 +57,16 @@ mixin _$GuruEvent {
 }
 
 /// @nodoc
-abstract class $GuruEventCopyWith<$Res> {
-  factory $GuruEventCopyWith(GuruEvent value, $Res Function(GuruEvent) then) =
-      _$GuruEventCopyWithImpl<$Res, GuruEvent>;
+abstract class $AcaraEventCopyWith<$Res> {
+  factory $AcaraEventCopyWith(
+          AcaraEvent value, $Res Function(AcaraEvent) then) =
+      _$AcaraEventCopyWithImpl<$Res, AcaraEvent>;
 }
 
 /// @nodoc
-class _$GuruEventCopyWithImpl<$Res, $Val extends GuruEvent>
-    implements $GuruEventCopyWith<$Res> {
-  _$GuruEventCopyWithImpl(this._value, this._then);
+class _$AcaraEventCopyWithImpl<$Res, $Val extends AcaraEvent>
+    implements $AcaraEventCopyWith<$Res> {
+  _$AcaraEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -82,7 +83,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$GuruEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$AcaraEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -96,7 +97,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'GuruEvent.started()';
+    return 'AcaraEvent.started()';
   }
 
   @override
@@ -171,7 +172,7 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements GuruEvent {
+abstract class _Started implements AcaraEvent {
   const factory _Started() = _$StartedImpl;
 }
 
@@ -184,7 +185,7 @@ abstract class _$$FetchImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$FetchImplCopyWithImpl<$Res>
-    extends _$GuruEventCopyWithImpl<$Res, _$FetchImpl>
+    extends _$AcaraEventCopyWithImpl<$Res, _$FetchImpl>
     implements _$$FetchImplCopyWith<$Res> {
   __$$FetchImplCopyWithImpl(
       _$FetchImpl _value, $Res Function(_$FetchImpl) _then)
@@ -198,7 +199,7 @@ class _$FetchImpl implements _Fetch {
 
   @override
   String toString() {
-    return 'GuruEvent.fetch()';
+    return 'AcaraEvent.fetch()';
   }
 
   @override
@@ -273,17 +274,17 @@ class _$FetchImpl implements _Fetch {
   }
 }
 
-abstract class _Fetch implements GuruEvent {
+abstract class _Fetch implements AcaraEvent {
   const factory _Fetch() = _$FetchImpl;
 }
 
 /// @nodoc
-mixin _$GuruState {
+mixin _$AcaraState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Guru> guru) success,
+    required TResult Function(List<Event> guru) success,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -291,7 +292,7 @@ mixin _$GuruState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Guru> guru)? success,
+    TResult? Function(List<Event> guru)? success,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -299,7 +300,7 @@ mixin _$GuruState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Guru> guru)? success,
+    TResult Function(List<Event> guru)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -332,15 +333,16 @@ mixin _$GuruState {
 }
 
 /// @nodoc
-abstract class $GuruStateCopyWith<$Res> {
-  factory $GuruStateCopyWith(GuruState value, $Res Function(GuruState) then) =
-      _$GuruStateCopyWithImpl<$Res, GuruState>;
+abstract class $AcaraStateCopyWith<$Res> {
+  factory $AcaraStateCopyWith(
+          AcaraState value, $Res Function(AcaraState) then) =
+      _$AcaraStateCopyWithImpl<$Res, AcaraState>;
 }
 
 /// @nodoc
-class _$GuruStateCopyWithImpl<$Res, $Val extends GuruState>
-    implements $GuruStateCopyWith<$Res> {
-  _$GuruStateCopyWithImpl(this._value, this._then);
+class _$AcaraStateCopyWithImpl<$Res, $Val extends AcaraState>
+    implements $AcaraStateCopyWith<$Res> {
+  _$AcaraStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -357,7 +359,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$GuruStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$AcaraStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -371,7 +373,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'GuruState.initial()';
+    return 'AcaraState.initial()';
   }
 
   @override
@@ -388,7 +390,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Guru> guru) success,
+    required TResult Function(List<Event> guru) success,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -399,7 +401,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Guru> guru)? success,
+    TResult? Function(List<Event> guru)? success,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -410,7 +412,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Guru> guru)? success,
+    TResult Function(List<Event> guru)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -458,7 +460,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements GuruState {
+abstract class _Initial implements AcaraState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -471,7 +473,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$GuruStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$AcaraStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -485,7 +487,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'GuruState.loading()';
+    return 'AcaraState.loading()';
   }
 
   @override
@@ -502,7 +504,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Guru> guru) success,
+    required TResult Function(List<Event> guru) success,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -513,7 +515,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Guru> guru)? success,
+    TResult? Function(List<Event> guru)? success,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -524,7 +526,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Guru> guru)? success,
+    TResult Function(List<Event> guru)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -572,7 +574,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements GuruState {
+abstract class _Loading implements AcaraState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -582,12 +584,12 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Guru> guru});
+  $Res call({List<Event> guru});
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$GuruStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$AcaraStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
@@ -602,7 +604,7 @@ class __$$SuccessImplCopyWithImpl<$Res>
       null == guru
           ? _value._guru
           : guru // ignore: cast_nullable_to_non_nullable
-              as List<Guru>,
+              as List<Event>,
     ));
   }
 }
@@ -610,11 +612,11 @@ class __$$SuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SuccessImpl implements _Success {
-  const _$SuccessImpl(final List<Guru> guru) : _guru = guru;
+  const _$SuccessImpl(final List<Event> guru) : _guru = guru;
 
-  final List<Guru> _guru;
+  final List<Event> _guru;
   @override
-  List<Guru> get guru {
+  List<Event> get guru {
     if (_guru is EqualUnmodifiableListView) return _guru;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_guru);
@@ -622,7 +624,7 @@ class _$SuccessImpl implements _Success {
 
   @override
   String toString() {
-    return 'GuruState.success(guru: $guru)';
+    return 'AcaraState.success(guru: $guru)';
   }
 
   @override
@@ -648,7 +650,7 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Guru> guru) success,
+    required TResult Function(List<Event> guru) success,
     required TResult Function(String message) error,
   }) {
     return success(guru);
@@ -659,7 +661,7 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Guru> guru)? success,
+    TResult? Function(List<Event> guru)? success,
     TResult? Function(String message)? error,
   }) {
     return success?.call(guru);
@@ -670,7 +672,7 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Guru> guru)? success,
+    TResult Function(List<Event> guru)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -718,10 +720,10 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements GuruState {
-  const factory _Success(final List<Guru> guru) = _$SuccessImpl;
+abstract class _Success implements AcaraState {
+  const factory _Success(final List<Event> guru) = _$SuccessImpl;
 
-  List<Guru> get guru;
+  List<Event> get guru;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -738,7 +740,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$GuruStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$AcaraStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -768,7 +770,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'GuruState.error(message: $message)';
+    return 'AcaraState.error(message: $message)';
   }
 
   @override
@@ -793,7 +795,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Guru> guru) success,
+    required TResult Function(List<Event> guru) success,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -804,7 +806,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Guru> guru)? success,
+    TResult? Function(List<Event> guru)? success,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -815,7 +817,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Guru> guru)? success,
+    TResult Function(List<Event> guru)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -863,7 +865,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements GuruState {
+abstract class _Error implements AcaraState {
   const factory _Error(final String message) = _$ErrorImpl;
 
   String get message;

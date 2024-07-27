@@ -1,0 +1,5 @@
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">https://www.sipsar.my.id/api/pengumuman</domain>
+    </domain-config>
+</network-security-config>
