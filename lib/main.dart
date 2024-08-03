@@ -8,6 +8,7 @@ import 'package:sipsar/presentation/bloc/profile/profile_bloc.dart';
 
 import 'data/datasource/event_remote_datasource.dart';
 import 'data/datasource/pengumuman_remote_datasource.dart';
+import 'presentation/arpage.dart';
 import 'presentation/bloc/acara/acara_bloc.dart';
 import 'presentation/bloc/pengumuman/pengumuman_bloc.dart';
 import 'presentation/event.dart';
@@ -72,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const GuruPage(),
     const PengumumanPage(),
     const EventsPage(),
-    const Scaffold()
+    const ArPage()
   ];
 
   void _onItemTapped(int index) {

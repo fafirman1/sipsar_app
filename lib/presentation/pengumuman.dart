@@ -60,99 +60,99 @@ class PengumanCard extends StatelessWidget {
     final String tanggal = formatter.format(data.createdAt);
     final String baseUrl = Variables.baseUrl;
 
-    return SizedBox(
-      child: Card(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                data.tittle,
-                style: const TextStyle(
-                  fontFamily: 'Poppins',
-                  fontSize: 14,
-                  fontWeight: FontWeight.w800,
-                ),
-                overflow: TextOverflow.ellipsis,
+    return GestureDetector(
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(
+              data.tittle,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w800
               ),
-              Text(
-                tanggal,
-                style: const TextStyle(
-                  fontSize: 10,
-                  color: Color.fromARGB(255, 55, 55, 55),
-                ),
-              ),
-              const Divider(),
-              Text(
-                data.isi,
-                style: const TextStyle(
-                  fontSize: 12,
-                ),
-                textAlign: TextAlign.justify,
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-              ),
-              GestureDetector(
-                onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                      title: Text(
-                        data.tittle,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w800
-                        ),
-                      ),
-                      content: SingleChildScrollView(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              tanggal,
-                              style: const TextStyle(
-                                fontSize: 10,
-                                color: Color.fromARGB(255, 55, 55, 55),
-                              ),
-                            ),
-                            const SizedBox(height: 8),
-                            const Divider(),
-                            Text(
-                              data.isi,
-                              style: const TextStyle(
-                                fontSize: 12,
-                              ),
-                              textAlign: TextAlign.justify,
-                            ),
-                            TextButton(
-                              onPressed: () {
-                                Clipboard.setData(
-                                  ClipboardData(text: '${Variables.baseUrl}/storage/pengumuman/${data.lampiran}'));
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(content: Text('Link disalin, silahkan tempel di browser untuk mengunduh')),
-                                );
-                              }, 
-                              child: const Text(
-                                'Unduh Lampiran',
-                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: const Text('Tutup'),
-                        ),
-                      ],
+            ),
+            content: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    tanggal,
+                    style: const TextStyle(
+                      fontSize: 10,
+                      color: Color.fromARGB(255, 55, 55, 55),
                     ),
-                  );
+                  ),
+                  const SizedBox(height: 8),
+                  const Divider(),
+                  Text(
+                    data.isi,
+                    style: const TextStyle(
+                      fontSize: 12,
+                    ),
+                    textAlign: TextAlign.justify,
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Clipboard.setData(
+                        ClipboardData(text: '$baseUrl/storage/pengumuman/${data.lampiran}'));
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Link disalin, silahkan tempel di browser untuk mengunduh')),
+                      );
+                    }, 
+                    child: const Text(
+                      'Unduh Lampiran',
+                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
                 },
-                child: const Text(
+                child: const Text('Tutup'),
+              ),
+            ],
+          ),
+        );
+      },
+      child: SizedBox(
+        child: Card(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  data.tittle,
+                  style: const TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 14,
+                    fontWeight: FontWeight.w800,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(
+                  tanggal,
+                  style: const TextStyle(
+                    fontSize: 10,
+                    color: Color.fromARGB(255, 55, 55, 55),
+                  ),
+                ),
+                const Divider(),
+                Text(
+                  data.isi,
+                  style: const TextStyle(
+                    fontSize: 12,
+                  ),
+                  textAlign: TextAlign.justify,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                const Text(
                   'Selengkapnya >',
                   style: TextStyle(
                     fontSize: 12,
@@ -160,8 +160,8 @@ class PengumanCard extends StatelessWidget {
                     color: Color.fromARGB(255, 11, 147, 81),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

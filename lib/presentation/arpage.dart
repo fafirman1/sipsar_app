@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ArPage extends StatelessWidget {
@@ -7,23 +8,27 @@ class ArPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ElevatedButton(
-        onPressed: () {
-          _launchUnityApp();
-        },
-        child: const Text('Buka'),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text(
+            'Pastikan Anda Sudah Menginstall Aplikasi OverlyApp. Unduh Melalui Tombol Berikut, Kemudian arahkan kamera ke logo sekolah SMP IT Insan Qur"ani Poncowarno',
+            style: TextStyle( fontSize: 14,fontWeight: FontWeight.w600,),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 12,),
+          ElevatedButton(
+            onPressed: () {
+                      Clipboard.setData(
+                        const ClipboardData(text: 'https://play.google.com/store/apps/details?id=com.Overly.Cloud'));
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Link disalin, silahkan tempel di browser untuk mengunduh')),
+                      );
+                    },
+            child: const Text('Buka'),
+          ),
+        ],
       ),
     );
-  }
-}
-
-Future<void> _launchUnityApp() async {
-  const urlString = 'youtube://open'; // Replace with your actual custom URL scheme
-  final url = Uri.parse(urlString);
-
-  if (await canLaunchUrl(url)) {
-    await launchUrl(url);
-  } else {
-    throw 'Could not launch $urlString';
   }
 }
